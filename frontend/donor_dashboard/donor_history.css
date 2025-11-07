@@ -1,0 +1,29 @@
+body {
+  background-color: #f8f9fa;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.table thead th {
+  color: #fff;
+  background-color: #dc3545;
+}
+
+#backBtn {
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+#backBtn:hover {
+  background-color: #b02a37;
+}

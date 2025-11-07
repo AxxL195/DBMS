@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Blood Donation Management System</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: #c62828;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 24px;
+      letter-spacing: 1px;
+      font-weight: bold;
+    }
+
+    nav {
+      background: #b71c1c;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffcccb;
+    }
+
+    section {
+      padding: 40px 10%;
+    }
+
+    .hero {
+      background: linear-gradient(to right, #ff5252, #c62828);
+      color: white;
+      text-align: center;
+      padding: 80px 10%;
+      border-radius: 10px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      background: white;
+      color: #c62828;
+      padding: 10px 25px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ffebee;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 30px;
+      color: #b71c1c;
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      color: #c62828;
+      margin-bottom: 10px;
+    }
+
+    form {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    form label {
+      font-weight: 600;
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    form input, form select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    form button {
+      margin-top: 20px;
+      background: #c62828;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    form button:hover {
+      background: #b71c1c;
+    }
+
+    footer {
+      background: #c62828;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    🩸 Online Blood Donation Management System
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#donate">Become a Donor</a>
+    <a href="#hospitals">Hospitals</a>
+    <a href="#appointments">Appointments</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="hero" id="home">
+    <h1>Donate Blood, Save Lives ❤</h1>
+    <p>Join our network of life-savers and help hospitals connect with the right donors.</p>
+    <a href="#donate" class="btn">Become a Donor</a>
+  </section>
+
+  <section id="donate">
+    <h2 class="section-title">Donor Registration</h2>
+    <form id="donorForm">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Enter your name" required>
+
+      <label for="blood">Blood Type</label>
+      <select id="blood" required>
+        <option value="">Select</option>
+        <option>A+</option>
+        <option>A-</option>
+        <option>B+</option>
+        <option>B-</option>
+        <option>AB+</option>
+        <option>AB-</option>
+        <option>O+</option>
+        <option>O-</option>
+      </select>
+
+      <label for="contact">Contact Number</label>
+      <input type="text" id="contact" placeholder="Enter your phone number" required>
+
+      <label for="history">Medical History</label>
+      <input type="text" id="history" placeholder="E.g. No major illnesses">
+
+      <button type="submit">Register as Donor</button>
+    </form>
+  </section>
+
+  <section id="hospitals">
+    <h2 class="section-title">Hospitals in Need</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>City Hospital</h3>
+        <p><strong>Location:</strong> New Delhi</p>
+        <p><strong>Needed Blood:</strong> O+, A+</p>
+      </div>
+      <div class="card">
+        <h3>LifeCare Center</h3>
+        <p><strong>Location:</strong> Mumbai</p>
+        <p><strong>Needed Blood:</strong> B-, AB+</p>
+      </div>
+      <div class="card">
+        <h3>Hope Medicals</h3>
+        <p><strong>Location:</strong> Bangalore</p>
+        <p><strong>Needed Blood:</strong> A-, O-</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="appointments">
+    <h2 class="section-title">Book Appointment</h2>
+    <form id="appointmentForm">
+      <label for="donorID">Donor ID</label>
+      <input type="text" id="donorID" placeholder="Enter your Donor ID" required>
+
+      <label for="hospitalID">Hospital Name</label>
+      <select id="hospitalID" required>
+        <option value="">Select Hospital</option>
+        <option>City Hospital</option>
+        <option>LifeCare Center</option>
+        <option>Hope Medicals</option>
+      </select>
+
+      <label for="date">Date</label>
+      <input type="date" id="date" required>
+
+      <label for="time">Time</label>
+      <input type="time" id="time" required>
+
+      <button type="submit">Schedule Appointment</button>
+    </form>
+  </section>
+
+  <footer>
+    © 2025 Online Blood Donation Management System | All Rights Reserved
+  </footer>
+
+  <script>
+    // Simple JS to simulate form submission
+    document.getElementById("donorForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("✅ Donor Registered Successfully!");
+      e.target.reset();
+    });
+
+    document.getElementById("appointmentForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("📅 Appointment Scheduled Successfully!");
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>

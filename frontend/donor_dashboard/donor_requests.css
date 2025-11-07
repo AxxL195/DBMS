@@ -1,0 +1,19 @@
+body {
+  background-color: #f8f9fa;
+  font-family: 'Poppins', sans-serif;
+}
+
+.table {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th {
+  background-color: #dc3545 !important;
+  color: white !important;
+}
+
+.btn-outline-light {
+  border-radius: 20px;
+  padding: 5px 15px;
+}

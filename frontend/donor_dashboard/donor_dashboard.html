@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donor Dashboard - Blood Donation System</title>
+
+  <!-- Bootstrap & AOS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="donor_dashboard.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Blood Donation System</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <button class="btn btn-outline-light btn-sm" id="logoutBtn">Logout</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Dashboard Welcome -->
+  <div class="container text-center mt-5">
+    <div data-aos="zoom-in">
+      <h2 class="fw-bold text-danger">Welcome, <span id="donorName">Donor</span> 👋</h2>
+      <p class="lead">Here’s your dashboard. You can view and manage your donation activity below.</p>
+    </div>
+  </div>
+
+  <!-- Dashboard Cards -->
+  <div class="container dashboard-section">
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4" data-aos="fade-up">
+        <div class="card shadow p-4 text-center">
+          <h5 class="text-danger fw-bold">Your Donation History</h5>
+          <p class="text-muted">View all the blood donations you’ve made so far.</p>
+          <button class="btn btn-danger btn-sm" id="viewHistoryBtn">View History</button>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
+        <div class="card shadow p-4 text-center">
+          <h5 class="text-danger fw-bold">Available Blood Requests</h5>
+          <p class="text-muted">Find hospitals currently requesting your blood type.</p>
+          <button class="btn btn-danger btn-sm" id="viewRequestsBtn">View Requests</button>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="card shadow p-4 text-center">
+          <h5 class="text-danger fw-bold">Update Profile</h5>
+          <p class="text-muted">Change your contact info or availability status.</p>
+          <button class="btn btn-danger btn-sm" id="updateProfileBtn">Update Info</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Showing Requests -->
+  <div class="modal fade" id="requestsModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-danger text-white">
+          <h5 class="modal-title">Available Blood Requests</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-bordered table-striped text-center">
+            <thead>
+              <tr>
+                <th>Hospital Name</th>
+                <th>Blood Group</th>
+                <th>Units</th>
+                <th>City</th>
+                <th>Urgent</th>
+              </tr>
+            </thead>
+            <tbody id="requestsTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-danger text-white text-center py-3 mt-5">
+    <p class="mb-0">© 2025 Blood Donation System | Save Lives, Donate Blood ❤️</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="donor_dashboard.js"></script>
+</body>
+</html>
