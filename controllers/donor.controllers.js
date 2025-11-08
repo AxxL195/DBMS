@@ -18,12 +18,12 @@ export const register = async (req, res) => {
     const {
       first_name,
       last_name,
+      gender,
+      date_of_birth,
+      phone_number,
       email,
       password,
-      phone_number,
-      gender,
       blood_group,
-      date_of_birth,
       city,
       state,
       zip_code,
@@ -94,3 +94,5 @@ export const login = async (req, res) => {
     res.status(500).send("Server error");
   }
 };
+
+export const 

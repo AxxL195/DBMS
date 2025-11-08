@@ -1,0 +1,23 @@
+body {
+  background-color: #fff5f5;
+}
+
+.dashboard-section {
+  margin-top: 50px;
+}
+
+.card {
+  border: none;
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-danger {
+  border-radius: 8px;
+  font-weight: 600;
+}
