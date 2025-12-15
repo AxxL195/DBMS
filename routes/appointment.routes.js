@@ -1,17 +1,40 @@
+// routes/appointment.routes.js
 import { Router } from "express";
-import { all,id, create, update ,deleteAppointment} from "../controllers/appointment.controllers.js";
+import { verifyToken } from "../middlewares/authmiddleware.js";
+import {
+  createAppointment,
+  donorAppointment,
+  donorConfirmAppointment,
+  hospitalAppointment,
+  hospitalUpdateStatus, // renamed handler for clarity
+  donorCompleteAppointment // optional alias if you use separate endpoint
+} from "../controllers/appointment.controllers.js";
 
 const appointmentRouter = Router();
 
-appointmentRouter.get('/all',all);//shows all the appointment
+// --------------------
+// Read endpoints
+// --------------------
+appointmentRouter.get("/hospital", verifyToken, hospitalAppointment); // used by hospital frontend
+appointmentRouter.get("/donor", verifyToken, donorAppointment); // used by donor frontend
 
-appointmentRouter.get('/:id',id);//shows the specific appointment
+// --------------------
+// Create appointment
+// --------------------
+appointmentRouter.post("/create", verifyToken, createAppointment); // donor creates appointment
 
-appointmentRouter.post('/create',create);//create appointment
+// --------------------
+// Hospital updates status (confirm / cancel) - single endpoint
+// Body: { action: "confirm" | "cancel" }
+// --------------------
+appointmentRouter.put("/status/:id", verifyToken, hospitalUpdateStatus);
 
-appointmentRouter.put('/update/:id',update);//updates appointment
+// --------------------
+// Donor confirms/completes donation (after hospital confirms)
+// --------------------
+appointmentRouter.put("/donor-confirm/:id", verifyToken, donorConfirmAppointment);
 
-appointmentRouter.delete('/delete/:id',deleteAppointment);//deletes appointment
-
+// (optional) donor marks donation completed with a different label
+appointmentRouter.put("/complete/:id", verifyToken, donorCompleteAppointment);
 
 export default appointmentRouter;

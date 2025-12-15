@@ -1,0 +1,30 @@
+body {
+  background-color: #f8f9fa;
+  font-family: 'Poppins', sans-serif;
+}
+
+th {
+  background-color: #dc3545 !important;
+  color: white !important;
+}
+
+.table {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.btn-outline-light {
+  border-radius: 20px;
+  padding: 5px 15px;
+}
+
+.status-badge {
+  font-size: 0.9rem;
+  padding: 6px 10px;
+  border-radius: 12px;
+}
+
+.action-btn {
+  border-radius: 20px;
+  margin: 2px;
+}

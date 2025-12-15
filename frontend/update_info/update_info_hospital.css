@@ -1,0 +1,58 @@
+/* Page background */
+body {
+  background: #f8f9fa;
+}
+
+/* Card hover effect (same as registration) */
+.card-hover {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.10);
+}
+
+/* Update button effect */
+.btn-update {
+  background-color: #0d6efd;      /* primary blue for update */
+  color: white;
+  border: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.btn-update:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(13, 110, 253, 0.25);
+}
+
+/* Cancel button */
+.btn-cancel {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.btn-cancel:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(108, 117, 125, 0.25);
+}
+
+/* Input fields polish */
+.form-control {
+  border-radius: 10px;
+  padding: 10px 14px;
+  border: 1px solid #ced4da;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.15rem rgba(13, 110, 253, 0.25);
+}
+
+/* Section title */
+.update-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #212529;
+  margin-bottom: 1rem;
+}

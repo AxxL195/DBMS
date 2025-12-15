@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Appointments - Blood Donation System</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="donor_appointments.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="donor_dashboard.html">Blood Donation System</a>
+      <div class="collapse navbar-collapse justify-content-end">
+        <button class="btn btn-outline-light btn-sm" id="backBtn">⬅ Back</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <div class="container text-center mt-5">
+    <h2 class="fw-bold text-danger">Your Appointments 🗓️</h2>
+    <p class="lead text-muted">View your upcoming and past appointments with hospitals.</p>
+  </div>
+
+  <!-- Appointment Table -->
+  <div class="container mt-4">
+    <div class="table-responsive shadow rounded">
+      <table class="table table-striped table-bordered align-middle text-center">
+        <thead class="table-danger">
+          <tr>
+            <th>Hospital</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Status</th>
+            <th>Reason</th>
+          </tr>
+        </thead>
+        <tbody id="appointmentTableBody">
+          <tr><td colspan="5">Loading your appointments...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-danger text-white text-center py-3 mt-5">
+    <p class="mb-0">© 2025 Blood Donation System | Save Lives, Donate Blood ❤️</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="donor_appointments.js"></script>
+</body>
+</html>

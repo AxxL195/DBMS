@@ -1,0 +1,29 @@
+body {
+  background-color: #f8f9fa;
+  font-family: 'Poppins', sans-serif;
+}
+
+th {
+  background-color: #dc3545 !important;
+  color: white !important;
+}
+
+.table {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.btn-outline-light {
+  border-radius: 20px;
+  padding: 5px 15px;
+}
+
+.action-btn {
+  border-radius: 20px;
+  margin: 2px;
+  transition: 0.2s ease;
+}
+
+.action-btn:hover {
+  transform: scale(1.05);
+}

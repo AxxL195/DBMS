@@ -1,17 +1,18 @@
 import { Router } from "express";
-import { all,create, getOne,remove,update } from "../controllers/bloodRequest.controllers.js";
+import { all,allForDonors,create, deleteBloodRequest, update } from "../controllers/bloodRequest.controllers.js";
+import { verifyToken } from "../middlewares/authmiddleware.js";
 
 const bloodRequestRouter = Router();
 
-bloodRequestRouter.get('/',all);
+bloodRequestRouter.get('/all',verifyToken,all);
 
-bloodRequestRouter.post('/',create);
+bloodRequestRouter.post('/create',verifyToken,create);
 
-bloodRequestRouter.get('/:id',getOne);
+bloodRequestRouter.get('/allForDonor',verifyToken, allForDonors);
 
-bloodRequestRouter.put('/update/:id',update);
+bloodRequestRouter.put('/:id',verifyToken,update);
 
-bloodRequestRouter.delete('/remove/:id',remove)
+bloodRequestRouter.delete('/:id',verifyToken,deleteBloodRequest);
 
 export default bloodRequestRouter;
 

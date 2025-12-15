@@ -13,7 +13,12 @@ import appointmentRouter from "./routes/appointment.routes.js";
 import bloodRequestRouter from "./routes/bloodRequest.routes.js";
 import loginRouter from "./routes/login.routes.js";
 
+import cors from "cors";
+
+
 const app = express();
+
+app.use(cors());
 
 app.use(express.json());
 
@@ -22,10 +27,9 @@ app.use('/api/v1/donor',donorRouter);
 app.use('/api/v1/hospital',hospitalRouter);
 app.use('/api/v1/appointment',appointmentRouter);
 app.use('/api/v1/bloodrequest',bloodRequestRouter);
-app.use('/api/v1/login',loginRouter)
+app.use('/api/v1/auth',loginRouter)
 
 app.use(errorMiddleware);
-
 
 app.get('/',(req,res) =>{
     res.send("LIFELINK");

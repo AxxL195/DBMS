@@ -1,15 +1,26 @@
 document.addEventListener("DOMContentLoaded", async () => {
-  const donorName = localStorage.getItem("donor_name") || "Donor";
   const tableBody = document.getElementById("donationHistoryBody");
+  tableBody.innerHTML = `<tr><td colspan="5">Loading your donation history...</td></tr>`;
+
+  const token = localStorage.getItem("token");
 
   try {
-    // Example API call (update URL to your backend route)
-    const response = await fetch("http://localhost:5000/api/donations");
-    const donations = await response.json();
+    const response = await fetch("http://localhost:5001/api/v1/donor/getDonationHistory", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    });
 
+    if (!response.ok) {
+      tableBody.innerHTML = `<tr><td colspan="5">No donation history found.</td></tr>`;
+      return;
+    }
+
+    const donations = await response.json();
     tableBody.innerHTML = "";
 
-    if (donations.length === 0) {
+    if (!Array.isArray(donations) || donations.length === 0) {
       tableBody.innerHTML = `<tr><td colspan="5">No donation history found.</td></tr>`;
       return;
     }
@@ -17,7 +28,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     donations.forEach(donation => {
       const row = `
         <tr>
-          <td>${new Date(donation.date).toLocaleDateString()}</td>
+          <td>${new Date(donation.donation_date).toLocaleDateString()}</td>
           <td>${donation.hospital_name || "Unknown"}</td>
           <td>${donation.blood_group}</td>
           <td>${donation.units}</td>
@@ -26,7 +37,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       `;
       tableBody.insertAdjacentHTML("beforeend", row);
     });
-
   } catch (error) {
     console.error(error);
     tableBody.innerHTML = `<tr><td colspan="5">Failed to load history.</td></tr>`;

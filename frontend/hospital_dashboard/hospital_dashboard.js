@@ -3,23 +3,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Dummy hospital name — replace with backend fetch later
   document.getElementById("hospitalName").textContent =
-    localStorage.getItem("hospitalName") || "City Hospital";
+    localStorage.getItem("hospital_name") || "Hospital";
 
-  // Navigation
   document.getElementById("createRequestBtn").addEventListener("click", () => {
-    window.location.href = "create_request.html";
+    window.location.href = "../blood_request/blood_request.html";
   });
 
   document.getElementById("viewAppointmentsBtn").addEventListener("click", () => {
-    window.location.href = "appointments.html";
+    window.location.href = "../appointment/view_appointment.html";
   });
 
   document.getElementById("viewRequestsBtn").addEventListener("click", () => {
-    window.location.href = "view_requests.html";
+    window.location.href = "../blood_request/view_blood_request.html";
   });
 
   document.getElementById("updateProfileBtn").addEventListener("click", () => {
-    window.location.href = "update_hospital_info.html";
+    window.location.href = "../update_info/update_info_hospital.html";
   });
 
   document.getElementById("logoutBtn").addEventListener("click", () => {

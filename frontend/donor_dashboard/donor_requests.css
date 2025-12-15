@@ -17,3 +17,22 @@ th {
   border-radius: 20px;
   padding: 5px 15px;
 }
+
+/* New: Donate button styles */
+.donate-btn {
+  border-radius: 20px;
+  transition: all 0.2s ease;
+}
+
+.donate-btn:hover {
+  background-color: #dc3545;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Badge styles for urgency */
+.badge {
+  font-size: 0.9rem;
+  padding: 6px 10px;
+  border-radius: 12px;
+}

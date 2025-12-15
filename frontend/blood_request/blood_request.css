@@ -1,0 +1,22 @@
+body {
+  background-color: #f8f9fa;
+}
+
+.card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.card-header {
+  font-weight: 600;
+}
+
+.btn-raise {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-raise:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(220, 53, 69, 0.3);
+}

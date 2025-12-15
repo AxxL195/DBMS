@@ -19,7 +19,7 @@ document.getElementById('hospitalForm').addEventListener('submit', async (e) => 
   };
 
   try {
-    const res = await fetch('http://localhost:5000/api/hospitals/register', {
+    const res = await fetch('http://localhost:5001/api/v1/hospital/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData)
@@ -29,7 +29,7 @@ document.getElementById('hospitalForm').addEventListener('submit', async (e) => 
 
     if (res.ok) {
       alert('✅ Hospital registered successfully!');
-      document.getElementById('hospitalForm').reset();
+      window.location.href = "../hospital_dashboard/hospital_dashboard.html"
     } else {
       alert('❌ Error: ' + data.message);
     }

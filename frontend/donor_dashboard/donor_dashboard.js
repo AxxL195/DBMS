@@ -43,8 +43,18 @@ document.getElementById("viewHistoryBtn").addEventListener("click", async () =>{
 document.getElementById("viewRequestsBtn").addEventListener("click",async () =>{
     window.location.href= "donor_requests.html"
 })
+// 🩸 View Appointments
+document.getElementById("viewAppointmentsBtn").addEventListener("click", () => {
+  window.location.href = "donor_appointments.html";
+});
+
 // 🩸 Logout
 document.getElementById("logoutBtn").addEventListener("click", () => {
   localStorage.clear();
   window.location.href = "../home.html";
 });
+
+
+document.getElementById("updateProfileBtn").addEventListener("click", () =>{
+  window.location.href = "../update_info/update_info_donor.html";
+})
